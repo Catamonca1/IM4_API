@@ -1,32 +1,35 @@
 <?php
 
-// Bindet das Skript extract.php für Rohdaten ein
+// Assumes extract.php returns the full JSON structure as an associative array
 $data = include('extract.php');
 
-// Initialisiert ein Array, um die transformierten Daten zu speichern
+// Initialize an array to store the transformed data
 $transformedData = [];
 
-// Transformiert und fügt die notwendigen Informationen hinzu
-foreach ($data['daily'] as $index => $day) {
-    // Erstellt ein Datumsschlüssel für jede Datenreihe
-    $dateKey = $day['time'];
-
-    // Harmonisiert die Struktur für den Tagesdatensatz
-    $transformedData[] = [
-        'date' => $dateKey,
-        'river_discharge' => $day['river_discharge'],
-        'river_discharge_mean' => $day['river_discharge_mean'],
-        'river_discharge_median' => $day['river_discharge_median'],
-        'river_discharge_max' => $day['river_discharge_max'],
-        'river_discharge_min' => $day['river_discharge_min'],
-        'river_discharge_p25' => $day['river_discharge_p25'],
-        'river_discharge_p75' => $day['river_discharge_p75']
-    ];
+// Check if the 'daily' key and sub-keys exist before trying to access them
+if (isset($data['daily']) && is_array($data['daily']['time'])) {
+    // Loop through the 'time' array which contains the dates
+    foreach ($data['daily']['time'] as $index => $date) {
+        // Ensure that each data type has an entry at the current index
+        if (isset($data['daily']['river_discharge'][$index])) {
+            // Create a new entry for each day with all associated data
+            $transformedData[] = [
+                'date' => $date,
+                'river_discharge' => $data['daily']['river_discharge'][$index],
+                'river_discharge_mean' => $data['daily']['river_discharge_mean'][$index],
+                'river_discharge_median' => $data['daily']['river_discharge_median'][$index],
+                'river_discharge_max' => $data['daily']['river_discharge_max'][$index],
+                'river_discharge_min' => $data['daily']['river_discharge_min'][$index],
+                'river_discharge_p25' => $data['daily']['river_discharge_p25'][$index],
+                'river_discharge_p75' => $data['daily']['river_discharge_p75'][$index]
+            ];
+        }
+    }
 }
 
-// Kodiert die transformierten Daten in JSON
+// Encode the transformed data into JSON with pretty printing
 $jsonData = json_encode($transformedData, JSON_PRETTY_PRINT);
 
-// Gibt die JSON-Daten zurück, anstatt sie auszugeben
+// Return the JSON data instead of outputting it
 return $jsonData;
 ?>
