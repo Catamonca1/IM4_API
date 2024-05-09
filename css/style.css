@@ -1,0 +1,40 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+body {
+    background-color: #7FCEFF;
+    color:#0147A6;
+    font-family: 'Bebas Neue', sans-serif;
+    text-align: center;
+    letter-spacing: 1px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+h1 {
+    letter-spacing: 3px;
+    color: white;
+    font-size: 45px;
+    text-align: center;
+    margin-top: 100px;
+}
+
+h3 {
+    font-family: 'Montserrat', sans-serif;
+    text-align: left;
+    margin-top: 55px;
+}
+
+button {
+    margin-top: 30px;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1px;
+    background-color: #4F4EF7;
+    color: white;
+    border: none; /* Entfernt die Kontur */
+    box-shadow: none; /* Entfernt den Schatten */
+    border-radius: 40px; /* Fügt abgerundete Ecken hinzu (Anpassbarer Wert) */
+    padding: 10px 20px; /* Anpassen der Polsterung nach Bedarf */
+    background-color: #0147A6; /* Hintergrundfarbe des Buttons */
+}
