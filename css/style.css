@@ -10,6 +10,18 @@ body {
     letter-spacing: 1px;
     margin-left: 30px;
     margin-right: 30px;
+    background-image: url(../images/background.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+}
+
+
+.container_header {
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
 }
 
 h1 {
@@ -24,17 +36,185 @@ h3 {
     font-family: 'Montserrat', sans-serif;
     text-align: left;
     margin-top: 55px;
+    margin-left: 100px;
 }
 
-button {
+#floatStand{
+    width: 80%;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+/*button {
     margin-top: 30px;
     font-family: 'Montserrat', sans-serif;
     letter-spacing: 1px;
     background-color: #4F4EF7;
     color: white;
-    border: none; /* Entfernt die Kontur */
-    box-shadow: none; /* Entfernt den Schatten */
-    border-radius: 40px; /* Fügt abgerundete Ecken hinzu (Anpassbarer Wert) */
-    padding: 10px 20px; /* Anpassen der Polsterung nach Bedarf */
-    background-color: #0147A6; /* Hintergrundfarbe des Buttons */
+    border: none; 
+    box-shadow: none; 
+    border-radius: 40px; 
+    padding: 10px 20px; 
+    background-color: #0147A6; 
+}*/
+
+label {
+    font-family: "bebas neue", sans-serif;
+    font-size: 20px;
+    letter-spacing: 1px;
+    color: white;
+    margin: 10px;
+}
+
+select {
+    margin-top: 30px;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1px;
+    color: white;
+    background-color: #0147A6; /* Dark blue background */
+    border: none; /* Removes borders */
+    box-shadow: none; /* Removes shadows */
+    border-radius: 40px; /* Adds rounded corners */
+    padding: 10px 20px; /* Adjust padding as needed */
+    appearance: none; /* Removes default system appearance */
+    -webkit-appearance: none; /* Specific for Chrome, Safari */
+    -moz-appearance: none; /* Specific for Firefox */
+    cursor: pointer; /* Makes it clear that it's selectable */
+    width: auto; /* Adjust width as necessary, could use 100% if full width is needed */
+    
+}
+
+/* Style for the dropdown arrow */
+select::-ms-expand {
+    display: none; /* Hide the default arrow in IE */
+}
+
+
+/* Styles for hover effects */
+select:hover {
+    background-color: #0367D3; /* Slightly lighter blue */
+}
+
+/* Focus styles to improve accessibility */
+select:focus {
+    outline: none; /* Removes default outline */
+    box-shadow: 0 0 0 2px, 0 0 0 4px #0367D3; /* Adds a custom focus style */
+}
+
+
+
+#container_riverlow{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 70px;
+    margin-bottom: 50px;
+    color: white;
+}
+
+.riverlow_text{
+    width: 50%;
+}
+
+
+#container_riverhigh{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 70px;
+    margin-bottom: 50px;
+    color: white;   
+}
+
+.riverhigh_text{
+    width: 50%;
+}   
+
+
+hr {
+    margin: 1em auto; /* centred margin */
+    height: 5px; /* thickness of the line */
+    background-color: white; /* colour of the line */
+    border: none; /* no border */
+}
+
+p {
+    font-family: 'Montserrat', sans-serif;
+    text-align: left;
+    margin-left: 50px;
+    font-size: 16px;
+}
+
+li {
+    font-family: 'Montserrat', sans-serif;
+    text-align: left;
+    font-size: 16px;
+    margin: 10px;
+}
+
+h2 {
+    font-family: 'bebas neue', sans-serif;
+    text-align: left;
+    margin-left: 50px;
+}
+
+
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    body {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+
+    h1 {
+        font-size: 32px; /* Smaller font size for mobile */
+        margin-top: 50px; /* Less margin on top */
+    }
+
+    h3, p, li, h2 {
+        margin-left: 10px; /* Less margin on the left */
+        text-align: center; /* Center text for better readability */
+    }
+
+    .container_header {
+        flex-direction: column; /* Stack flex items vertically */
+        align-items: center; /* Align items to center horizontally */
+        margin-top: 30px; /* Less margin on top */
+    }
+
+    #floatStand{
+        width: 100%;
+    }
+
+
+    #container_riverlow {
+        flex-direction: column; /* Stack flex items vertically */
+        align-items: center; /* Align items to center horizontally */
+    }
+
+     #container_riverhigh {
+        flex-direction: column-reverse; /* Stack flex items vertically */
+        align-items: center; /* Align items to center horizontally */
+    }
+
+    .riverlow_text, .riverhigh_text{
+        width: 100%;
+        font-size: 14px;
+    }
+
+    select {
+        display: block; /* Makes the select element a block-level element */
+        width: 80%; /* Ensures it takes up the full width of its parent */
+        margin: 30px auto; 
+    }
+
+  
+
+
+
+   /* button {
+        padding: 8px 16px; 
+        font-size: 14px; 
+    }*/
 }
