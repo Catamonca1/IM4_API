@@ -31,21 +31,35 @@ init();
 const floatStand = document.querySelector('#floatStand');
 
 new Chart(floatStand, {
-  type: 'line',
+  type: 'bar',
   data: {
     labels: ['Monday', 'Tuesday', 'Wendsday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+
     datasets: [{
       label: 'River discharge Max.',
       data: [12, 19, 3, 5, 2, 3, 8],
-      borderWidth: 3,
+      borderWidth: 1,
+      borderColor: 'rgba(0,0,0,0)'
+    },
+    {
+      label: 'River discharge Min.',
+      data: [1, 7, 8, 6, 2, 3, 8],
+      borderWidth: 1,
+      borderColor: 'rgba(0,0,0,1)'
      
-    }]
+    }
+
+  ]
   },
   options: {
-    scales: {
-      y: {
-        beginAtZero: true
+    indexAxis: 'y',
+    plugins: {
+      legend: {
+        labels: {
+          color: 'white'
+        }
       }
     }
   }
 });
+
