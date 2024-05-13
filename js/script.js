@@ -33,11 +33,12 @@ const floatStand = document.querySelector('#floatStand');
 new Chart(floatStand, {
   type: 'line',
   data: {
-    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+    labels: ['Monday', 'Tuesday', 'Wendsday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
     datasets: [{
-      label: '# of Votes',
-      data: [12, 19, 3, 5, 2, 3],
-      borderWidth: 1
+      label: 'River discharge Max.',
+      data: [12, 19, 3, 5, 2, 3, 8],
+      borderWidth: 3,
+     
     }]
   },
   options: {
