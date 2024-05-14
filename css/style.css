@@ -68,16 +68,14 @@ h3 {
     cursor: pointer; 
 }
 
-/* Styles for hover effects */
-#button1, #button2:hover {
-    background-color: #0367D3; /* Slightly lighter blue */
-}
+
 
 /* Focus styles to improve accessibility */
-#button1, #button2:focus {
-    outline: none; /* Removes default outline */
-    box-shadow: 0 0 0 2px, 0 0 0 4px #0367D3; /* Adds a custom focus style */
-}
+/* #button1, #button2:focus {
+    outline: none; /* Removes default outline 
+    box-shadow: 0 0 0 2px, 0 0 0 4px #0367D3; 
+} */
+
 
 label {
     font-family: "bebas neue", sans-serif;
