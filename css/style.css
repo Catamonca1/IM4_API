@@ -41,10 +41,10 @@ h3 {
 #floatStand {
     width: 80%;
     padding: 50px;
-    justify-content: center;
+    /*justify-content: center;
     background-color: rgba(255, 255, 255, 0.7);
     border-radius: 50px;
-    z-index: 1;
+    z-index: 1;*/
 }
 
 /*button {
