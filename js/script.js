@@ -117,46 +117,28 @@ init();
 
 //this function updates the date and the week
 
-function updateDateAndWeek() {
+function updateWeek() {
     var currentDate = new Date();
     var currentWeek = getWeekNumber(currentDate);
 
     // Log to console for debugging
-    console.log("Updating date and week");
-    console.log("Current Date: ", currentDate);
+    console.log("Updating week");
     console.log("Current Week: ", currentWeek);
 
-    // Datum und Kalenderwoche in die entsprechenden HTML-Elemente einfügen
-    document.getElementById('currentDate').textContent = formatDate(currentDate);
+    // Kalenderwoche in das entsprechende HTML-Element einfügen
     document.getElementById('currentWeek').textContent = currentWeek;
 }
 
-// Funktion zur Formatierung des Datums (TT.MM.JJJJ)
-function formatDate(date) {
-    var day = date.getDate();
-    var month = date.getMonth() + 1;
-    var year = date.getFullYear();
-
-    return (day < 10 ? '0' : '') + day + '.' + (month < 10 ? '0' : '') + month + '.' + year;
-}
-
-// Funktion zur Berechnung der Kalenderwoche nach ISO 8601
+// Funktion zur Berechnung der Kalenderwoche innerhalb des aktuellen Monats
 function getWeekNumber(date) {
-    var target = new Date(date.valueOf());
-    var dayNr = (date.getDay() + 6) % 7;
-    target.setDate(target.getDate() - dayNr + 3);
-    var firstThursday = target.valueOf();
-    target.setMonth(0, 1);
-    if (target.getDay() !== 4) {
-        target.setMonth(0, 1 + ((4 - target.getDay()) + 7) % 7);
-    }
-    return 1 + Math.ceil((firstThursday - target) / 604800000);
+    var firstDayOfMonth = new Date(date.getFullYear(), date.getMonth(), 1);
+    var daysIntoFirstWeek = (8 - firstDayOfMonth.getDay()) % 7;
+    var daysIntoMonth = date.getDate() - 1;
+    return Math.floor((daysIntoMonth + daysIntoFirstWeek) / 7) + 1;
 }
 
-// Die Funktion updateDateAndWeek initial aufrufen
-updateDateAndWeek();
+// Die Funktion updateWeek initial aufrufen
+updateWeek();
 
-// Die Funktion updateDateAndWeek jede Woche aufrufen (alle 7 Tage)
-setInterval(updateDateAndWeek, 7 * 24 * 60 * 60 * 1000);
-
-
+// Die Funktion updateWeek jede Woche aufrufen (alle 7 Tage)
+setInterval(updateWeek, 7 * 24 * 60 * 60 * 1000);
