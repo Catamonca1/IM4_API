@@ -1,6 +1,12 @@
 let url = 'https://412326-4.web.fhgr.ch/php/unload.php';
 let data;
 
+const containerRiverLow = document.getElementById('container_riverlow');
+const containerRiverHigh = document.getElementById('container_riverhigh');
+
+let lastDate = 0;
+
+
 const floatStand = document.querySelector('#floatStand');
 const chart = new Chart(floatStand, {
     type: 'bar',
@@ -86,8 +92,8 @@ function updateChartData() {
 
     const maxData = [];
     const minData = [];
-
     dates.forEach(date => {
+        lastDate = filteredData[date][0]['river_discharge_min'];
         if (filteredData[date] && filteredData[date].length > 0) {
             maxData.push(filteredData[date][0]['river_discharge_max']);
             minData.push(filteredData[date][0]['river_discharge_min']);
@@ -96,6 +102,16 @@ function updateChartData() {
             minData.push(0);
         }
     });
+
+    
+    console.log(lastDate);
+    if (lastDate < 30) {
+        containerRiverLow.style.display = 'flex';
+        containerRiverHigh.style.display = 'none';
+    } else {
+        containerRiverLow.style.display = 'none';
+        containerRiverHigh.style.display = 'flex';
+    }
 
     chart.data.labels = dates;
     chart.data.datasets[0].data = maxData;
@@ -125,6 +141,26 @@ function filterDataByDateRange(data, start, end) {
 
 init();
 
+function showContainer(containerId) {
+    var containers = document.querySelectorAll('.container');
+    containers.forEach(function(container) {
+      if (container.id === containerId) {
+        container.style.display = 'block';
+      } else {
+        container.style.display = 'none';
+      }
+    });
+  }function showContainer(containerId) {
+    var containers = document.querySelectorAll('.container');
+    containers.forEach(function(container) {
+      if (container.id === containerId) {
+        container.style.display = 'block';
+      } else {
+        container.style.display = 'none';
+      }
+    });
+  }
+
 
 //this function updates the date and the week
 
@@ -153,3 +189,16 @@ updateWeek();
 
 // Die Funktion updateWeek jede Woche aufrufen (alle 7 Tage)
 setInterval(updateWeek, 7 * 24 * 60 * 60 * 1000);
+
+
+
+function showContainer(containerId) {
+    
+
+    // Hide both sections initially
+    containerRiverLow.style.display = 'none';
+    containerRiverHigh.style.display = 'none';
+
+    // Show the selected container
+    document.getElementById(containerId).style.display = 'flex';
+}
