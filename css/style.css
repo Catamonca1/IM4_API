@@ -47,9 +47,16 @@ h3 {
     z-index: 1;*/
 }
 
-/*button {
-    margin-top: 30px;
+#container_buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}   
+
+#button1, #button2 {
+    margin: 30px;
     font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
     letter-spacing: 1px;
     background-color: #4F4EF7;
     color: white;
@@ -58,7 +65,19 @@ h3 {
     border-radius: 40px; 
     padding: 10px 20px; 
     background-color: #0147A6; 
-}*/
+    cursor: pointer; 
+}
+
+/* Styles for hover effects */
+#button1, #button2:hover {
+    background-color: #0367D3; /* Slightly lighter blue */
+}
+
+/* Focus styles to improve accessibility */
+#button1, #button2:focus {
+    outline: none; /* Removes default outline */
+    box-shadow: 0 0 0 2px, 0 0 0 4px #0367D3; /* Adds a custom focus style */
+}
 
 label {
     font-family: "bebas neue", sans-serif;
@@ -231,8 +250,9 @@ h2 {
 
 
 
-   /* button {
+    button {
         padding: 8px 16px; 
         font-size: 14px; 
-    }*/
+    }
+
 }
