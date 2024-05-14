@@ -43,6 +43,9 @@ h3 {
     width: 80%;
     margin: 0 auto;
     justify-content: center;
+    background-color: white;
+    z-index: 1;
+    
 }
 
 /*button {
