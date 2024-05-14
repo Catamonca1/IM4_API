@@ -17,7 +17,6 @@ body {
     
 }
 
-
 .container_header {
     margin-top: 100px;
     display: flex;
@@ -39,13 +38,13 @@ h3 {
     margin-left: 100px;
 }
 
-#floatStand{
+#floatStand {
     width: 80%;
-    margin: 0 auto;
+    padding: 50px;
     justify-content: center;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 50px;
     z-index: 1;
-    
 }
 
 /*button {
@@ -104,7 +103,20 @@ select:focus {
     box-shadow: 0 0 0 2px, 0 0 0 4px #0367D3; /* Adds a custom focus style */
 }
 
+#container_explenation{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 70px;
+    margin-bottom: 50px;
+    color: white;   
+}
 
+.explenation_text{
+    width: 50%;
+    text-align: center;
+    font-size: 30px;
+}
 
 #container_riverlow{
     display: flex;
@@ -145,13 +157,13 @@ p {
     font-family: 'Montserrat', sans-serif;
     text-align: left;
     margin-left: 50px;
-    font-size: 16px;
+    font-size: 22px;
 }
 
 li {
     font-family: 'Montserrat', sans-serif;
     text-align: left;
-    font-size: 16px;
+    font-size: 22px;
     margin: 10px;
 }
 
@@ -159,6 +171,7 @@ h2 {
     font-family: 'bebas neue', sans-serif;
     text-align: left;
     margin-left: 50px;
+    font-size: 30px;
 }
 
 
@@ -188,6 +201,8 @@ h2 {
 
     #floatStand{
         width: 100%;
+        padding: 10px;
+        border-radius: 10px;
     }
 
 
