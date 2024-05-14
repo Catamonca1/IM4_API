@@ -64,24 +64,7 @@
          
           </div>
 
-        <!-- Dropdown for selecting weeks in June -
-        <label for="juneWeekSelector">June:</label>
-        <select id="juneWeekSelector">
-            <option value="week1">Week 1</option>
-            <option value="week2">Week 2</option>
-            <option value="week3">Week 3</option>
-            <option value="week4">Week 4</option>
-        </select>
-
-        Dropdown for selecting weeks in July 
-        <label for="julyWeekSelector">July:</label>
-        <select id="julyWeekSelector">
-            <option value="week1">Week 1</option>
-            <option value="week2">Week 2</option>
-            <option value="week3">Week 3</option>
-            <option value="week4">Week 4</option>
-            <option value="week5">Week 5</option>
-        </select>-->
+      
 
         <section id="container_explenation">
           <p class="explenation_text">"River discharge max" and "min" refer to the maximum and minimum 
@@ -90,7 +73,17 @@
         </section>
 
 
-       <section id="container_riverlow">
+        <section id="container_button">
+          <button id="button1" onclick="showContainer('container_riverlow')">Water Level Low</button>
+          <button id="button2" onclick="showContainer('container_riverhigh')">Water Level High</button>
+        </section>
+
+
+  
+
+
+
+       <section id="container_riverlow" style="display: none;">
 
         <div class="riverlow_image">
           <img src="images/ente6.png" alt="sailing duck" style="height: 300px;">
@@ -113,7 +106,7 @@
 
 
 
-       <section id="container_riverhigh">
+       <section id="container_riverhigh" style="display: none;">
         <div class="riverhigh_text">
           <h2>Water level high: Let’s take the big boats!</h2>
           <hr>
