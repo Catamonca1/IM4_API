@@ -27,9 +27,20 @@ const chart = new Chart(floatStand, {
         indexAxis: 'y',
         scales: {
             y: {
-                beginAtZero: true
+                beginAtZero: true,
+                ticks: {
+                    color: 'rgba(241, 145, 118, 1)',
+                    size: 30,
+                }
+            },
+            x: {
+                
+                ticks: {
+                    color: 'rgba(241, 145, 118, 1)',
+                }
             }
         },
+        
         
         plugins: {
             legend: {
