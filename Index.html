@@ -30,7 +30,10 @@
 
     <main>
 
-      <h3>Date</h3>
+        <div>
+        <p>Current Date: <span id="currentDate"></span></p>
+        <p>Current Week: <span id="currentWeek"></span></p>
+       </div>
 
         <div>
             <canvas id="floatStand"></canvas>
@@ -51,18 +54,18 @@
             JULY
           </button> -->
 
-
+          <div>
+            <label for="weekSelector">Select Interval:</label>
+            <select id="weekSelector" onchange="updateChartData()">
+                <option value="week1">Last 7 Days</option>
+                <option value="week2">7-14 Days Ago</option>
+                <option value="week3">14-21 Days Ago</option>
+                <option value="week4">21-28 Days Ago</option>
+            </select>
          
-        <!-- Dropdown for selecting weeks in May -->
-        <label for="mayWeekSelector">May:</label>
-        <select id="mayWeekSelector">
-            <option value="week1">Week 1</option>
-            <option value="week2">Week 2</option>
-            <option value="week3">Week 3</option>
-            <option value="week4">Week 4</option>
-        </select>
+          </div>
 
-        <!-- Dropdown for selecting weeks in June -->
+        <!-- Dropdown for selecting weeks in June -
         <label for="juneWeekSelector">June:</label>
         <select id="juneWeekSelector">
             <option value="week1">Week 1</option>
@@ -71,7 +74,7 @@
             <option value="week4">Week 4</option>
         </select>
 
-        <!-- Dropdown for selecting weeks in July -->
+        Dropdown for selecting weeks in July 
         <label for="julyWeekSelector">July:</label>
         <select id="julyWeekSelector">
             <option value="week1">Week 1</option>
@@ -79,7 +82,7 @@
             <option value="week3">Week 3</option>
             <option value="week4">Week 4</option>
             <option value="week5">Week 5</option>
-        </select>
+        </select>-->
 
 
 
