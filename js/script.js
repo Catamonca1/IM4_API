@@ -105,12 +105,15 @@ function updateChartData() {
 
     
     console.log(lastDate);
+
     if (lastDate < 30) {
         containerRiverLow.style.display = 'flex';
         containerRiverHigh.style.display = 'none';
+        button1.style.backgroundColor = '#7FCEFF';
     } else {
         containerRiverLow.style.display = 'none';
         containerRiverHigh.style.display = 'flex';
+        button2.style.backgroundColor = '#7FCEFF';
     }
 
     chart.data.labels = dates;
