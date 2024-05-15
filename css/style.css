@@ -68,6 +68,10 @@ h3 {
     cursor: pointer; 
 }
 
+/*
+#button1:hover, #button2:hover {
+    background-color: #7FCEFF;
+}
 
 
 /* Focus styles to improve accessibility */
@@ -190,7 +194,6 @@ h2 {
     margin-left: 50px;
     font-size: 30px;
 }
-
 
 
 /* Responsive styles */
