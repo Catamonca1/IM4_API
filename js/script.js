@@ -36,28 +36,38 @@ const chart = new Chart(floatStand, {
                 beginAtZero: true,
                 ticks: {
                     color: 'rgba(241, 145, 118, 1)',
-                    size: 30,
+                    font: {
+                        size: 20,
+                        family: 'Montserrat',
+                    }
                 }
             },
             x: {
                 
                 ticks: {
                     color: 'rgba(241, 145, 118, 1)',
+                    font: {
+                        size: 20,
+                        family: 'Montserrat',
+                    }
                 }
             }
         },
-        
         
         plugins: {
             legend: {
                 labels: {
                     color: 'black',
-                    
+                    font: {
+                        size: 20,
+                        family: 'Montserrat',
+                    }
                 }
             }
         }
     }
 });
+
 
 async function init() {
     let response = await fetch(url);
@@ -66,6 +76,7 @@ async function init() {
 
     updateChartData();
 }
+
 
 function getDateRanges() {
     const today = new Date();
@@ -81,6 +92,7 @@ function getDateRanges() {
 
     return ranges;
 }
+
 
 function updateChartData() {
     const weekSelector = document.getElementById('weekSelector').value;
@@ -104,16 +116,18 @@ function updateChartData() {
     });
 
     
-    console.log(lastDate);
+   // console.log(lastDate);
 
     if (lastDate < 30) {
         containerRiverLow.style.display = 'flex';
         containerRiverHigh.style.display = 'none';
         button1.style.backgroundColor = '#7FCEFF';
+        button2.style.backgroundColor = '#0147A6';
     } else {
         containerRiverLow.style.display = 'none';
         containerRiverHigh.style.display = 'flex';
         button2.style.backgroundColor = '#7FCEFF';
+        button1.style.backgroundColor = '#0147A6';
     }
 
     chart.data.labels = dates;
@@ -175,16 +189,18 @@ function updateWeek() {
     console.log("Updating week");
     console.log("Current Week: ", currentWeek);
 
-    // Kalenderwoche in das entsprechende HTML-Element einfügen
+    // Kalenderwoche des Jahres in das entsprechende HTML-Element einfügen
     document.getElementById('currentWeek').textContent = currentWeek;
 }
 
-// Funktion zur Berechnung der Kalenderwoche innerhalb des aktuellen Monats
+// Funktion zur Berechnung der Kalenderwoche des Jahres
 function getWeekNumber(date) {
-    var firstDayOfMonth = new Date(date.getFullYear(), date.getMonth(), 1);
-    var daysIntoFirstWeek = (8 - firstDayOfMonth.getDay()) % 7;
-    var daysIntoMonth = date.getDate() - 1;
-    return Math.floor((daysIntoMonth + daysIntoFirstWeek) / 7) + 1;
+    var januaryFirst = new Date(date.getFullYear(), 0, 1); // Erster Januar des aktuellen Jahres
+    var daysOffset = (januaryFirst.getDay() > 0 ? januaryFirst.getDay() - 1 : 6); // Tage, um zum ersten Montag des Jahres zu gelangen
+    var firstMonday = new Date(januaryFirst.getTime() + daysOffset * 24 * 60 * 60 * 1000); // Erster Montag des Jahres
+    var daysDifference = (date.getTime() - firstMonday.getTime()) / (24 * 60 * 60 * 1000); // Differenz in Tagen zwischen dem aktuellen Datum und dem ersten Montag des Jahres
+    var weekNumber = Math.ceil((daysDifference + 1) / 7); // Kalenderwoche des Jahres
+    return weekNumber;
 }
 
 // Die Funktion updateWeek initial aufrufen
