@@ -68,17 +68,6 @@ h3 {
     cursor: pointer; 
 }
 
-/*
-#button1:hover, #button2:hover {
-    background-color: #7FCEFF;
-}
-
-
-/* Focus styles to improve accessibility */
-/* #button1, #button2:focus {
-    outline: none; /* Removes default outline 
-    box-shadow: 0 0 0 2px, 0 0 0 4px #0367D3; 
-} */
 
 
 label {
@@ -223,6 +212,12 @@ h2 {
         width: 100%;
         padding: 10px;
         border-radius: 10px;
+    }
+
+    .explenation_text{
+        width: 90%;
+        text-align: center;
+        font-size: 16px;
     }
 
 
