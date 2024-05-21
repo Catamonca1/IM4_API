@@ -105,7 +105,7 @@ function updateChartData() {
     const maxData = [];
     const minData = [];
     dates.forEach(date => {
-        lastDate = filteredData[date][0]['river_discharge_min'];
+        lastDate = filteredData[date][0]['river_discharge_max'];
         if (filteredData[date] && filteredData[date].length > 0) {
             maxData.push(filteredData[date][0]['river_discharge_max']);
             minData.push(filteredData[date][0]['river_discharge_min']);
